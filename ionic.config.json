@@ -1,0 +1,7 @@
+{
+  "name": "eventoNes",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
