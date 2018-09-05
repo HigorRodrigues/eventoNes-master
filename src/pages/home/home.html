@@ -4,45 +4,85 @@
       Evento NES
     </ion-title>
   </ion-navbar>
-  
-  <ion-toolbar no-border-bottom>
-    <ion-segment [(ngModel)]="dia1">
-      <ion-segment-button value="dia1">
-        <ion-icon md="md-calendar"></ion-icon><span padding='1px'>8</span>
+
+  <div padding>
+    <ion-segment [(ngModel)]="data">
+      <ion-segment-button value="dia8">
+        Dia 8
       </ion-segment-button>
-      <ion-segment-button value="dia2">
-        <ion-icon name="calendar"></ion-icon><span padding='1px'>9</span>
+      <ion-segment-button value="dia9">
+        Dia 9
       </ion-segment-button>
-      <ion-segment-button value="dia3">
-        <ion-icon name="calendar"></ion-icon><span padding='1px'>10</span>
+      <ion-segment-button value="dia10">
+        Dia 10
       </ion-segment-button>
     </ion-segment>
-  </ion-toolbar>
-
+  </div>
+  
+    <ion-item>
+      <ion-label>Categoria</ion-label>
+      <ion-select [(ngModel)]="categoria" interface="popover">
+        <ion-option *ngFor="let v of select" [value]="v" (ionSelect)="selectCategoria($event, v)">{{v}}</ion-option>      
+      </ion-select>
+    </ion-item>
 </ion-header>
 
-<ion-content>
-  <ion-card class="backCard" *ngFor="let v of valores">
-    <ion-card-content >
-      <ion-card-title class="colorInCard bordaCard" >        
-        <strong>{{v.titulo}}</strong>
-      </ion-card-title>
-      
+<ion-content [ngSwitch]="data">
+  <ion-list *ngSwitchCase="'dia8'">
+    <ion-card class="backCard" *ngFor="let v of dia8">
+      <ion-card-content >
+        <ion-card-title class="colorInCard bordaCard" >        
+          <strong>{{v.titulo}}</strong>
+        </ion-card-title>        
         <div class="fontInCard">
-          <strong>Descrição: </strong>
-          {{v.corpo}}
+          <strong>Descrição: </strong> {{v.corpo}}
         </div>
         <div class="fontInCard">
-            <strong>Horário: </strong>
-            {{v.horario}}
+          <strong>Horário: </strong> {{v.horario}}
         </div>
         <div class="fontInCard">
-            <strong>Sala: </strong>
-            {{v.sala}}
+          <strong>Sala: </strong> {{v.sala}}
+        </div>    
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngSwitchCase="'dia9'">
+    <ion-card class="backCard" *ngFor="let v of dia9">
+      <ion-card-content >
+        <ion-card-title class="colorInCard bordaCard" >        
+          <strong>{{v.titulo}}</strong>
+        </ion-card-title>        
+        <div class="fontInCard">
+          <strong>Descrição: </strong> {{v.corpo}}
         </div>
-      
-    </ion-card-content>
-  </ion-card>
+        <div class="fontInCard">
+          <strong>Horário: </strong> {{v.horario}}
+        </div>
+        <div class="fontInCard">
+          <strong>Sala: </strong> {{v.sala}}
+        </div>    
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'dia10'">
+      <ion-card class="backCard" *ngFor="let v of dia10">
+        <ion-card-content >
+          <ion-card-title class="colorInCard bordaCard" >        
+            <strong>{{v.titulo}}</strong>
+          </ion-card-title>        
+          <div class="fontInCard">
+            <strong>Descrição: </strong> {{v.corpo}}
+          </div>
+          <div class="fontInCard">
+            <strong>Horário: </strong> {{v.horario}}
+          </div>
+          <div class="fontInCard">
+            <strong>Sala: </strong> {{v.sala}}
+          </div>    
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
 </ion-content>
 
 <ion-footer class="backFooter" text-center>
