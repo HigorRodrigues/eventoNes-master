@@ -2,6 +2,17 @@ page-home {
 .toolbar-background-md{
     background: orange;
 }
+.button-outline-md{
+    border-width: 1px;
+    border-style: solid;
+    border-color: darkgray;
+    color: white;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: rgba(250, 163, 2, 0.959);
+}
+
 .toolbar-title-md{
     color: white;
 }    

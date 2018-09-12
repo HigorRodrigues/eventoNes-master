@@ -9,6 +9,7 @@ export class HomePage {
 
   lista = [];
 
+
   dia8 = [{titulo: 'Testes 1', corpo: 'Lorem ipsum teste Lorem ipsum teste Lorem ipsum teste ', horario: '12:30', sala: 10},
     {titulo: 'Testes 2', corpo: 'Lorem ipsum teste Lorem ipsum teste Lorem ipsum teste ', horario: '12:30', sala: 10}, 
     {titulo: 'Testes 3', corpo: 'Lorem ipsum teste Lorem ipsum teste Lorem ipsum teste ', horario: '12:30', sala: 10}];
@@ -26,11 +27,7 @@ export class HomePage {
   data: string;
   categoria: string;
 
-  showPalestras(event): void{
- /*  palestrasEminicursos = [{titulo: 'Testes 1', corpo: 'Lorem ipsum teste Lorem ipsum teste Lorem ipsum teste ', horario: '12:30', sala: 10},
-    {titulo: 'Testes 2', corpo: 'Lorem ipsum teste Lorem ipsum teste Lorem ipsum teste ', horario: '12:30', sala: 10}, 
-    {titulo: 'Testes 3', corpo: 'Lorem ipsum teste Lorem ipsum teste Lorem ipsum teste ', horario: '12:30', sala: 10}];*/
-  }
+ 
 
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController) {
     
@@ -56,6 +53,11 @@ export class HomePage {
     else if(this.data == "dia10"){
       this.lista = this.dia10;
     }
+  }
+
+  sessoesTecnicas(event)
+  {
+     
   }
 
   selectCategoria($event, cat){

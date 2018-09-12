@@ -7,37 +7,6 @@
 
   <div class="menuToolbar">
     <ion-segment [(ngModel)]="data">
-<<<<<<< HEAD
-      <div padding>
-        <ion-segment [(ngModel)]="data" class="segment">
-          <ion-segment-button value="dia8">
-            Dia 8
-          </ion-segment-button>
-          <ion-segment-button value="dia9">
-            Dia 9
-          </ion-segment-button>
-          <ion-segment-button value="dia10">
-            Dia 10
-          </ion-segment-button>
-        </ion-segment>
-
-        <ion-item>
-          <ion-label (click)="showPalestras()">Palestras / Minicursos</ion-label>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label>Sessões Técnicas</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>Categoria</ion-label>
-          <ion-select [(ngModel)]="categoria" interface="popover">
-            <ion-option *ngFor="let v of select" [value]="v" (ionSelect)="selectCategoria($event, v)">{{v}}</ion-option>
-          </ion-select>
-        </ion-item>
-
-      </div>
-    </ion-segment>
-=======
       <ion-segment-button segment-activated value="dia8" (ionSelect) = "limparLista($event)">
         Dia 8
       </ion-segment-button>
@@ -59,15 +28,14 @@
       </button>
     </div>
 
-    <!--
-    <ion-item>
+    
+ <!--   <ion-item id="itemCategoria">
       <ion-label>Categoria</ion-label>
       <ion-select [(ngModel)]="categoria" interface="popover">
         <ion-option *ngFor="let v of select" [value]="v" (ionSelect)="selectCategoria($event, v)">{{v}}</ion-option>      
       </ion-select>
-    </ion-item>
-  -->
->>>>>>> 155b96137489a713b54cc014246e46c5631290fa
+    </ion-item> -->
+  
   </div>
 </ion-header>
 
