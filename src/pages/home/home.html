@@ -5,7 +5,7 @@
     </ion-title>
   </ion-navbar>
 
-  <div padding>
+  <div class="menuToolbar">
     <ion-segment [(ngModel)]="data">
       <ion-segment-button value="dia8">
         Dia 8
@@ -17,14 +17,15 @@
         Dia 10
       </ion-segment-button>
     </ion-segment>
-  </div>
-  
+
     <ion-item>
       <ion-label>Categoria</ion-label>
       <ion-select [(ngModel)]="categoria" interface="popover">
         <ion-option *ngFor="let v of select" [value]="v" (ionSelect)="selectCategoria($event, v)">{{v}}</ion-option>      
       </ion-select>
     </ion-item>
+
+  </div>
 </ion-header>
 
 <ion-content [ngSwitch]="data">
