@@ -7,6 +7,7 @@
 
   <div class="menuToolbar">
     <ion-segment [(ngModel)]="data">
+<<<<<<< HEAD
       <div padding>
         <ion-segment [(ngModel)]="data" class="segment">
           <ion-segment-button value="dia8">
@@ -36,12 +37,43 @@
 
       </div>
     </ion-segment>
+=======
+      <ion-segment-button segment-activated value="dia8" (ionSelect) = "limparLista($event)">
+        Dia 8
+      </ion-segment-button>
+      <ion-segment-button value="dia9" (ionSelect) = "limparLista($event)">
+        Dia 9
+      </ion-segment-button>
+      <ion-segment-button value="dia10" (ionSelect) = "limparLista($event)">
+        Dia 10
+      </ion-segment-button>
+    </ion-segment>
+    
+    <div id="valor">
+      <button ion-button block outline (click)="palestrasEminucursos($event)">
+        Palestras/Minicursos
+      </button>
+    
+      <button ion-button block outline>
+          Sessões técnicas
+      </button>
+    </div>
+
+    <!--
+    <ion-item>
+      <ion-label>Categoria</ion-label>
+      <ion-select [(ngModel)]="categoria" interface="popover">
+        <ion-option *ngFor="let v of select" [value]="v" (ionSelect)="selectCategoria($event, v)">{{v}}</ion-option>      
+      </ion-select>
+    </ion-item>
+  -->
+>>>>>>> 155b96137489a713b54cc014246e46c5631290fa
   </div>
 </ion-header>
 
 <ion-content [ngSwitch]="data">
   <ion-list *ngSwitchCase="'dia8'">
-    <ion-card class="backCard" *ngFor="let v of dia8">
+    <ion-card class="backCard" *ngFor="let v of lista">
       <ion-card-content>
         <ion-card-title class="colorInCard bordaCard">
           <strong>{{v.titulo}}</strong>
@@ -59,7 +91,7 @@
     </ion-card>
   </ion-list>
   <ion-list *ngSwitchCase="'dia9'">
-    <ion-card class="backCard" *ngFor="let v of dia9">
+    <ion-card class="backCard" *ngFor="let v of lista">
       <ion-card-content>
         <ion-card-title class="colorInCard bordaCard">
           <strong>{{v.titulo}}</strong>
@@ -78,7 +110,7 @@
   </ion-list>
 
   <ion-list *ngSwitchCase="'dia10'">
-    <ion-card class="backCard" *ngFor="let v of dia10">
+    <ion-card class="backCard" *ngFor="let v of lista">
       <ion-card-content>
         <ion-card-title class="colorInCard bordaCard">
           <strong>{{v.titulo}}</strong>
