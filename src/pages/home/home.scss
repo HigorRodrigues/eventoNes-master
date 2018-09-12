@@ -1,3 +1,33 @@
 page-home {
-
+.toolbar-background-md{
+    background: orange;
 }
+.toolbar-title-md{
+    color: white;
+}    
+text-align: left;
+.segment-md .segment-button{
+    color: white;
+    background-color: orange;
+}
+.segment-md .segment-button.activated, .segment-md .segment-button.segment-activated{
+    border-color: darkgray;
+}
+.label{
+    text-align: left;
+    font-style: normal;
+    color: darkgray;
+}
+.card-md{
+    background: rgba(245, 163, 11, 0.952);
+    color: whitesmoke;
+}
+.card-title-md{
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-style:normal;
+     
+}
+}
+
