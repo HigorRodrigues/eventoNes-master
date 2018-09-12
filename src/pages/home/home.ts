@@ -7,6 +7,8 @@ import { NavController, LoadingController } from 'ionic-angular';
 })
 export class HomePage {
 
+  lista = [];
+
   dia8 = [{titulo: 'Testes 1', corpo: 'Lorem ipsum teste Lorem ipsum teste Lorem ipsum teste ', horario: '12:30', sala: 10},
     {titulo: 'Testes 2', corpo: 'Lorem ipsum teste Lorem ipsum teste Lorem ipsum teste ', horario: '12:30', sala: 10}, 
     {titulo: 'Testes 3', corpo: 'Lorem ipsum teste Lorem ipsum teste Lorem ipsum teste ', horario: '12:30', sala: 10}];
@@ -31,11 +33,29 @@ export class HomePage {
   }
 
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController) {
+    
     const loader = this.loadingCtrl.create({
       content: "Iniciando...",
       duration: 3000
     });
     loader.present();
+  }
+
+  limparLista(event){
+
+    this.lista = [];
+  }
+
+  palestrasEminucursos(event){
+    if(this.data == "dia8"){
+      this.lista = this.dia8;
+    }
+    else if(this.data == "dia9"){
+      this.lista = this.dia9;
+    }
+    else if(this.data == "dia10"){
+      this.lista = this.dia10;
+    }
   }
 
   selectCategoria($event, cat){
