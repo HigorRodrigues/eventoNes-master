@@ -52,7 +52,7 @@ export class HomePage {
   { titulo: 'Sessão Pôsteres', corpo: 'Trabalhos de pesquisa submetidos.', horario: '15:30 - 16h', sala:  ''},
   {titulo: 'Cerimônia de Encerramento', corpo: 'Cerimônia de Encerramento do XXI Encontro Nacional de Modelagem Computacional e IX Encontro de Ciência e Tecnologia dos Materiais', horario: '18h30 - 20h', sala: ''}];
 
-  select = ["Opcao1", "Opcao2", "Opcao3", "Opcao4", "Opcao5", "Opcao6"];
+ /// select = ["Opcao1", "Opcao2", "Opcao3", "Opcao4", "Opcao5", "Opcao6"];
 
   data: string;
   categoria: string;
