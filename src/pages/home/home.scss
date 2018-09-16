@@ -24,6 +24,12 @@ text-align: left;
 .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated{
     border-color: darkgray;
 }
+
+.button:hover{
+    color: orange;
+    background-color: white;
+}
+
 .label{
     text-align: left;
     font-style: normal;
@@ -45,6 +51,11 @@ text-align: left;
 }
 .imgLogo{
     width: 80px;
+}
+
+.backFooter{
+    background-color: #565656;
+    color: #ffffff;
 }
 }
 

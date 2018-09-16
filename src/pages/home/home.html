@@ -7,7 +7,7 @@
 
   <div class="menuToolbar">
     <ion-segment [(ngModel)]="data">
-      <ion-segment-button segment-activated value="dia8" (ionSelect) = "limparLista($event)">
+      <ion-segment-button value="dia8" (ionSelect) = "limparLista($event)">
         Dia 8
       </ion-segment-button>
       <ion-segment-button value="dia9" (ionSelect) = "limparLista($event)">
@@ -23,7 +23,7 @@
         Palestras/Minicursos
       </button>
     
-      <button ion-button block outline>
+      <button ion-button block outline (click)="sessoesTecnicas($event)">
           Sessões técnicas
       </button>
     </div>
@@ -39,8 +39,8 @@
   </div>
 </ion-header>
 
-<ion-content [ngSwitch]="data">
-  <ion-list *ngSwitchCase="'dia8'">
+<ion-content>
+  <ion-list>
     <ion-card class="backCard" *ngFor="let v of lista">
       <ion-card-content>
         <ion-card-title class="colorInCard bordaCard">
@@ -58,7 +58,7 @@
       </ion-card-content>
     </ion-card>
   </ion-list>
-  <ion-list *ngSwitchCase="'dia9'">
+  <ion-list >
     <ion-card class="backCard" *ngFor="let v of lista">
       <ion-card-content>
         <ion-card-title class="colorInCard bordaCard">
@@ -77,7 +77,7 @@
     </ion-card>
   </ion-list>
 
-  <ion-list *ngSwitchCase="'dia10'">
+  <ion-list>
     <ion-card class="backCard" *ngFor="let v of lista">
       <ion-card-content>
         <ion-card-title class="colorInCard bordaCard">
