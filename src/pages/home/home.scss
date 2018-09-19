@@ -4,28 +4,28 @@ page-home {
 }
 
 .btnGeral{
-    width: 65px;
+    width: 33%;
     float: left;
-    clear: none;
-    margin: 1px; 
-    left: 2px;
+    clear: none; 
+    margin: 0.10%;
+}
+
+.pularLinha{
+    white-space: 'pre-line';
 }
 
 .btnPM{
-    width: 180px;
-     float: left;
+    width: 33%;
+    float: left;
     clear: initial;
-    margin: 1px;
-    left: 1px;
-
+    margin: 0.10%;
 }
 
 .btnST{
-    width: 150px;
+    width: 33%;
     float: left;
     clear: unset;
-    margin: 1px;
-    
+    margin: 0.10%;
 }
 
 .button-outline-md{
@@ -69,19 +69,29 @@ text-align: left;
     color: white;
     text-align: center;
     font-size: 18px;
-    font-style:normal;
-     
+    font-style:normal; 
 }
+
+.horario{
+    border-right: 1px solid white;
+}
+
+.titleHorario{
+    border-bottom: 1px solid white;
+    text-align: center;
+    padding-top: 3%;
+}
+
 .card-content-md{
     color: white;
 }
 .imgLogo{
     width: 80px;
 }
-
 .backFooter{
     background-color: #565656;
     color: #ffffff;
-}
+    margin-top: 2%;
+  }
 }
 

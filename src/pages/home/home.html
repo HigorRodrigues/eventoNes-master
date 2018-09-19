@@ -7,30 +7,25 @@
 
   <div class="menuToolbar">
     <ion-segment [(ngModel)]="data">
-      <ion-segment-button value="dia8" (ionSelect) = "limparLista($event)">
+      <ion-segment-button value="dia8" (click) = "limparLista($event)">
         Dia 8
       </ion-segment-button>
-      <ion-segment-button value="dia9" (ionSelect) = "limparLista($event)">
+      <ion-segment-button value="dia9" (click) = "limparLista($event)">
         Dia 9
       </ion-segment-button>
-      <ion-segment-button value="dia10" (ionSelect) = "limparLista($event)">
+      <ion-segment-button value="dia10" (click) = "limparLista($event)">
         Dia 10
       </ion-segment-button>
     </ion-segment>
-   
-    
-      
-   
-    
-    
+
     <div id="valor">
       <button ion-button block outline (click)="geral($event)" class="btnGeral">Geral</button>
       <button ion-button block outline (click)="palestrasEminucursos($event)" class="btnPM">
-        Palestras/Minicursos
+        Minicursos
       </button>
     
       <button ion-button block outline (click)="sessoesTecnicas($event)" class="btnST">
-          Sessões técnicas
+          Sessões
       </button>
     </div>
 
@@ -48,70 +43,31 @@
 <ion-content>
   <ion-list>
     <ion-card class="backCard" *ngFor="let v of lista">
-      <ion-card-content>
-        <ion-card-title class="colorInCard bordaCard">
-          <strong>{{v.titulo}}</strong>
-        </ion-card-title>
-        <div class="fontInCard">
-          <strong>Descrição: </strong> {{v.corpo}}
-        </div>
-        <div class="fontInCard">
-          <strong>Horário: </strong> {{v.horario}}
-        </div>
-        <div class="fontInCard">
-          <strong>Sala: </strong> {{v.sala}}
-        </div>
-      </ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3 class="horario">
+              {{v.horaInicio}} - {{v.horaFim}}
+          </ion-col>
+          <ion-col colorInCard bordaCard>
+              <strong>{{v.titulo}}</strong>  
+          </ion-col>
+        </ion-row>         
+        <ion-row>
+            <ion-col col-3 class="horario"> </ion-col>
+            <ion-col class="colorInCard bordaCard pularLinha" >
+              {{v.instrutor}}
+            </ion-col>
+        </ion-row>
+      </ion-grid>                        
     </ion-card>
-  </ion-list>
-  <ion-list >
-    <ion-card class="backCard" *ngFor="let v of lista">
-      <ion-card-content>
-        <ion-card-title class="colorInCard bordaCard">
-          <strong>{{v.titulo}}</strong>
-        </ion-card-title>
-        <div class="fontInCard">
-          <strong>Descrição: </strong> {{v.corpo}}
-        </div>
-        <div class="fontInCard">
-          <strong>Horário: </strong> {{v.horario}}
-        </div>
-        <div class="fontInCard">
-          <strong>Sala: </strong> {{v.sala}}
-        </div>
-      </ion-card-content>
-    </ion-card>
-  </ion-list>
-
-  <ion-list>
-    <ion-card class="backCard" *ngFor="let v of lista">
-      <ion-card-content>
-        <ion-card-title class="colorInCard bordaCard">
-          <strong>{{v.titulo}}</strong>
-        </ion-card-title>
-        <div class="fontInCard">
-          <strong>Descrição: </strong> {{v.corpo}}
-        </div>
-        <div class="fontInCard">
-          <strong>Horário: </strong> {{v.horario}}
-        </div>
-        <div class="fontInCard">
-          <strong>Sala: </strong> {{v.sala}}
-        </div>
-      </ion-card-content>
-    </ion-card>
-  </ion-list>
-  
+  </ion-list>  
 </ion-content>
 
-
-
-
 <ion-footer class="backFooter" text-center>
-  <p>
-    &copy; NES - Núcleo de Engenharia de Software
-  </p>
-  <p>
-    IFFluminense/PIGG
-  </p>
-</ion-footer>
+    <p>
+      &copy; NES - Núcleo de Engenharia de Software
+    </p>
+    <p>
+      IFFluminense/PIGG
+    </p>
+  </ion-footer>
