@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the MinicursosPage page.
+ * Generated class for the PalestrasMinicursosPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-minicursos',
-  templateUrl: 'minicursos.html',
+  selector: 'page-palestras-minicursos',
+  templateUrl: 'palestras-minicursos.html',
 })
-export class MinicursosPage {
+export class PalestrasMinicursosPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MinicursosPage');
+    console.log('ionViewDidLoad PalestrasMinicursosPage');
   }
 
 }

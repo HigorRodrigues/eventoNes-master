@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
+import {GeralPage} from '../geral/geral';
+import {PalestrasMinicursosPage} from '../palestras-minicursos/palestras-minicursos';
+import {SessaoTecnicaPage} from '../sessao-tecnica/sessao-tecnica';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 
+                                                                                                                              
   
 })
 export class HomePage {
@@ -58,6 +62,21 @@ export class HomePage {
     this.carregamento("Iniciando", 3000);
   }
 
+  geralPage(): void{
+    this.navCtrl.push(GeralPage);
+  }
+
+  palestrasMinicursosPage(): void{
+    this.navCtrl.push(PalestrasMinicursosPage);
+  }
+
+  sessaoTecnicaPage(): void{
+    this.navCtrl.push(SessaoTecnicaPage);
+  }
+
+
+
+ 
   carregamento( mensagem, tempo ){
     const loader = this.loadingCtrl.create({
       content: mensagem + "...",
@@ -82,6 +101,8 @@ export class HomePage {
       this.lista = this.palestrasEminicursosD10;
     }
   }
+
+  
 
   sessoesTecnicas(event) {    
     this.carregamento("Carregando", 2000);

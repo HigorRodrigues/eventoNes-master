@@ -2,6 +2,32 @@ page-home {
 .toolbar-background-md{
     background: orange;
 }
+
+.btnGeral{
+    width: 65px;
+    float: left;
+    clear: none;
+    margin: 1px; 
+    left: 2px;
+}
+
+.btnPM{
+    width: 180px;
+     float: left;
+    clear: initial;
+    margin: 1px;
+    left: 1px;
+
+}
+
+.btnST{
+    width: 150px;
+    float: left;
+    clear: unset;
+    margin: 1px;
+    
+}
+
 .button-outline-md{
     border-width: 1px;
     border-style: solid;
