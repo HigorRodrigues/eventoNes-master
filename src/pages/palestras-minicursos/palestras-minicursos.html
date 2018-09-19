@@ -7,12 +7,67 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Palestra e Minicursos</ion-title>
+    <ion-title>Palestras e Minicursos</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-list>
+    <ion-card class="backCard" *ngFor="let v of listDAY">
+      <ion-card-content>
+        <ion-card-title class="colorInCard bordaCard">
+          <strong>{{v.titulo}}</strong>
+        </ion-card-title>
+        <div class="fontInCard">
+          <strong>Descrição: </strong> {{v.corpo}}
+        </div>
+        <div class="fontInCard">
+          <strong>Horário: </strong> {{v.horario}}
+        </div>
+        <div class="fontInCard">
+          <strong>Sala: </strong> {{v.sala}}
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list >
+    <ion-card class="backCard" *ngFor="let v of listDAY">
+      <ion-card-content>
+        <ion-card-title class="colorInCard bordaCard">
+          <strong>{{v.titulo}}</strong>
+        </ion-card-title>
+        <div class="fontInCard">
+          <strong>Descrição: </strong> {{v.corpo}}
+        </div>
+        <div class="fontInCard">
+          <strong>Horário: </strong> {{v.horario}}
+        </div>
+        <div class="fontInCard">
+          <strong>Sala: </strong> {{v.sala}}
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 
+  <ion-list>
+    <ion-card class="backCard" *ngFor="let v of listDAY">
+      <ion-card-content>
+        <ion-card-title class="colorInCard bordaCard">
+          <strong>{{v.titulo}}</strong>
+        </ion-card-title>
+        <div class="fontInCard">
+          <strong>Descrição: </strong> {{v.corpo}}
+        </div>
+        <div class="fontInCard">
+          <strong>Horário: </strong> {{v.horario}}
+        </div>
+        <div class="fontInCard">
+          <strong>Sala: </strong> {{v.sala}}
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  
 </ion-content>

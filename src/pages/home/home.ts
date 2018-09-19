@@ -59,10 +59,11 @@ export class HomePage {
   categoria: string;
 
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController) {
+
     this.carregamento("Iniciando", 3000);
   }
 
-  geralPage(): void{
+/*  geralPage(): void{
     this.navCtrl.push(GeralPage);
   }
 
@@ -72,7 +73,7 @@ export class HomePage {
 
   sessaoTecnicaPage(): void{
     this.navCtrl.push(SessaoTecnicaPage);
-  }
+  }*/
 
 
 
@@ -89,16 +90,32 @@ export class HomePage {
     this.lista = [];
   }
 
+  geral(event){
+    if (this.data == "dia8") {
+      this.navCtrl.push(GeralPage, {lista: this.dia8});
+    }
+    else if (this.data == "dia9") {
+      this.navCtrl.push(GeralPage, {lista: this.dia9});
+    }
+    else if (this.data == "dia10") {
+      this.navCtrl.push(GeralPage, {lista: this.dia10});
+    }
+  }
+
   palestrasEminucursos(event) {
     this.carregamento("Carregando", 2000);
     if (this.data == "dia8") {
-      this.lista = this.palestrasEminicursosD8;
+      this.navCtrl.push(PalestrasMinicursosPage, {lista: this.palestrasEminicursosD8});
+      //this.lista = this.palestrasEminicursosD8;
+      
     }
     else if (this.data == "dia9") {
-      this.lista = this.palestrasEminicursosD9;
+      //this.lista = this.palestrasEminicursosD9;
+      this.navCtrl.push(PalestrasMinicursosPage, {lista: this.palestrasEminicursosD9});
     }
     else if (this.data == "dia10") {
-      this.lista = this.palestrasEminicursosD10;
+      this.navCtrl.push(PalestrasMinicursosPage, {lista: this.palestrasEminicursosD10});
+     // this.lista = this.palestrasEminicursosD10;
     }
   }
 
@@ -108,12 +125,15 @@ export class HomePage {
     this.carregamento("Carregando", 2000);
     if (this.data == "dia8") {
       this.lista = [];
+      this.navCtrl.push(SessaoTecnicaPage);
     }
     else if (this.data == "dia9") {
-      this.lista = this.sessaotecnicaD9;
+      this.navCtrl.push(SessaoTecnicaPage, {lista: this.sessaotecnicaD9});
+      //this.lista = this.sessaotecnicaD9;
     }
     else if (this.data == "dia10") {
-      this.lista = this.sessaotecnicaD10;
+      this.navCtrl.push(SessaoTecnicaPage, {lista: this.sessaotecnicaD10});
+      //this.lista = this.sessaotecnicaD10;
     }
   }
 

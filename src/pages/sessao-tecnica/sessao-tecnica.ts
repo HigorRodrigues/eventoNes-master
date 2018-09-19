@@ -15,7 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SessaoTecnicaPage {
 
+  sessionList = [];
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.sessionList  = navParams.get('lista');
+     console.log(this.sessionList);
   }
 
   ionViewDidLoad() {
