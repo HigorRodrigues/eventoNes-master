@@ -71,14 +71,10 @@ export class HomePage {
       {tipo: 'geral', titulo: 'Cerimônia de Encerramento', horaInicio: '18:30', horaFim: '20:00'}
     ];
 
- /// select = ["Opcao1", "Opcao2", "Opcao3", "Opcao4", "Opcao5", "Opcao6"];
-
   data: string;
   categoria: string;
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController) {
-
-   
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController) {   
   }
 
 /*  geralPage(): void{
@@ -92,9 +88,6 @@ export class HomePage {
   sessaoTecnicaPage(): void{
     this.navCtrl.push(SessaoTecnicaPage);
   }*/
-
-
-
  
   limparLista(event) {
     if( this.data == "dia8"){
@@ -108,52 +101,49 @@ export class HomePage {
     }
   }
 
-  retornoTipo(lista, tipo){
-    tipo = [];
-    for( var l in lista){
-      
+  retornoTipo(lista, cat){
+    var tipo = [];
+    for( var i = 0; i < lista.length; i++ ){      
+      if( lista[i].tipo == cat )
+        tipo.push(lista[i]);
     }
+    return tipo;
   }
+
   geral(event){
     if (this.data == "dia8") {
-      this.navCtrl.push(GeralPage, {lista: this.dia8});
+      this.navCtrl.push(GeralPage, {lista: this.retornoTipo(this.dia8, 'geral'), dia: "08/10"});
     }
     else if (this.data == "dia9") {
-      this.navCtrl.push(GeralPage, {lista: this.dia9});
+      this.navCtrl.push(GeralPage, {lista: this.retornoTipo(this.dia9, 'geral'), dia: "09/10"});
     }
     else if (this.data == "dia10") {
-      this.navCtrl.push(GeralPage, {lista: this.dia10});
+      this.navCtrl.push(GeralPage, {lista: this.retornoTipo(this.dia10, 'geral'), dia: "10/10"});
     }
   }
 
   palestrasEminucursos(event) {
     if (this.data == "dia8") {
-      this.navCtrl.push(PalestrasMinicursosPage, {lista: this.palestrasEminicursosD8});
-      //this.lista = this.palestrasEminicursosD8;
-      
+      this.navCtrl.push(PalestrasMinicursosPage, {lista: this.retornoTipo(this.dia8, 'minicurso'), dia: "08/10"});
     }
     else if (this.data == "dia9") {
-      //this.lista = this.palestrasEminicursosD9;
-      this.navCtrl.push(PalestrasMinicursosPage, {lista: this.palestrasEminicursosD9});
+      this.navCtrl.push(PalestrasMinicursosPage, {lista: this.retornoTipo(this.dia9, 'minicurso'), dia: "09/10"});
     }
     else if (this.data == "dia10") {
-      this.navCtrl.push(PalestrasMinicursosPage, {lista: this.palestrasEminicursosD10});
-     // this.lista = this.palestrasEminicursosD10;
+      this.navCtrl.push(PalestrasMinicursosPage, {lista: this.retornoTipo(this.dia10, 'minicurso'), dia: "10/10"});
     }
   }
 
+  //falta implemetar
   sessoesTecnicas(event) {        
     if (this.data == "dia8") {
-      this.lista = [];
-      this.navCtrl.push(SessaoTecnicaPage);
+      this.navCtrl.push(SessaoTecnicaPage, {lista: this.retornoTipo(this.dia8, 'plESes'), dia: "08/10"});
     }
     else if (this.data == "dia9") {
-      this.navCtrl.push(SessaoTecnicaPage, {lista: this.sessaotecnicaD9});
-      //this.lista = this.sessaotecnicaD9;
+      this.navCtrl.push(SessaoTecnicaPage, {lista: this.retornoTipo(this.dia9, 'plESes'), dia: '09/10'});
     }
     else if (this.data == "dia10") {
-      this.navCtrl.push(SessaoTecnicaPage, {lista: this.sessaotecnicaD10});
-      //this.lista = this.sessaotecnicaD10;
+      this.navCtrl.push(SessaoTecnicaPage, {lista: this.retornoTipo(this.dia10, 'plESes'), dia: '10/10'});
     }
   }
 

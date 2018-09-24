@@ -16,16 +16,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class PalestrasMinicursosPage {
 
   listDAY = [];
-
-
+  dia;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-     this.listDAY  = navParams.get('lista');
-     console.log(this.listDAY);
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PalestrasMinicursosPage');
+    this.listDAY  = navParams.get('lista');
+    this.dia = navParams.get('dia');
   }
 
 }

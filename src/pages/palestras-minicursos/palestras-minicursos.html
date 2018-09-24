@@ -7,67 +7,39 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Palestras e Minicursos</ion-title>
+    <ion-title>Minicursos ({{dia}})</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content>
   <ion-list>
     <ion-card class="backCard" *ngFor="let v of listDAY">
-      <ion-card-content>
-        <ion-card-title class="colorInCard bordaCard">
-          <strong>{{v.titulo}}</strong>
-        </ion-card-title>
-        <div class="fontInCard">
-          <strong>Descrição: </strong> {{v.corpo}}
-        </div>
-        <div class="fontInCard">
-          <strong>Horário: </strong> {{v.horario}}
-        </div>
-        <div class="fontInCard">
-          <strong>Sala: </strong> {{v.sala}}
-        </div>
-      </ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3 class="horario">
+              {{v.horaInicio}} - {{v.horaFim}}
+          </ion-col>
+          <ion-col colorInCard bordaCard>
+              <strong>{{v.titulo}}</strong>  
+          </ion-col>
+        </ion-row>         
+        <ion-row>
+            <ion-col col-3 class="horario"> </ion-col>
+            <ion-col class="colorInCard bordaCard pularLinha" >
+              {{v.instrutor}}
+            </ion-col>
+        </ion-row>
+      </ion-grid>                        
     </ion-card>
-  </ion-list>
-  <ion-list >
-    <ion-card class="backCard" *ngFor="let v of listDAY">
-      <ion-card-content>
-        <ion-card-title class="colorInCard bordaCard">
-          <strong>{{v.titulo}}</strong>
-        </ion-card-title>
-        <div class="fontInCard">
-          <strong>Descrição: </strong> {{v.corpo}}
-        </div>
-        <div class="fontInCard">
-          <strong>Horário: </strong> {{v.horario}}
-        </div>
-        <div class="fontInCard">
-          <strong>Sala: </strong> {{v.sala}}
-        </div>
-      </ion-card-content>
-    </ion-card>
-  </ion-list>
-
-  <ion-list>
-    <ion-card class="backCard" *ngFor="let v of listDAY">
-      <ion-card-content>
-        <ion-card-title class="colorInCard bordaCard">
-          <strong>{{v.titulo}}</strong>
-        </ion-card-title>
-        <div class="fontInCard">
-          <strong>Descrição: </strong> {{v.corpo}}
-        </div>
-        <div class="fontInCard">
-          <strong>Horário: </strong> {{v.horario}}
-        </div>
-        <div class="fontInCard">
-          <strong>Sala: </strong> {{v.sala}}
-        </div>
-      </ion-card-content>
-    </ion-card>
-  </ion-list>
-  
+  </ion-list>  
 </ion-content>
+
+<ion-footer class="backFooter" text-center>
+  <p class="reduzMargimBottom">
+    &copy; NES - Núcleo de Engenharia de Software
+  </p>
+  <p class="reduzMargimTop">
+    IFFluminense/PIGG
+  </p>
+</ion-footer>

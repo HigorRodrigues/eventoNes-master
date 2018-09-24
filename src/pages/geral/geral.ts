@@ -17,16 +17,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class GeralPage {
 
   listGeral = [];
-  
+  dia;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.listGeral = navParams.get('lista');
-     console.log(this.listGeral);
+    this.dia = navParams.get('dia');  
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GeralPage');
-  }
-
- 
-
 }
