@@ -41,7 +41,7 @@ export class HomePage {
       {tipo: 'geral', titulo: 'Almoço', horaInicio: '12:30', horaFim: '14:00'},
       {tipo: 'geral', titulo: 'Cerimônia de abertura', horaInicio: '14:00', horaFim: '14:30'},
       {tipo: 'plESes', titulo: 'Palestra de Abertura: Desafios da Ciência', instrutor: 'Rodolfo Jardim de Azevedo – Diretor do Instituto de Computação da Unicamp', horaInicio: '14:30', horaFim: '15:30'},
-      {tipo: 'geral', titulo: 'Coffee Break - Painel I', horaInicio: '15:30', horaFim: '16:00'},
+      {tipo: 'geral', titulo: 'Coffee Break - Painel I: As aplicações da Modelagem Computacional na Física', horaInicio: '15:30', horaFim: '16:00'},
       {tipo: 'plESes', titulo: 'Palestra em Modelagem Computacional: Modelagem Computacional do Comportamento dos Tecidos do Corpo Humano', instrutor: 'Aura Conci – Professora da UFF', horaInicio: '16:00', horaFim: '17:00'},
       {tipo: 'plESes', titulo: 'Palestra em Ciência e Tecnologia de Materiais: Modelagem Numérica de Falha de Materiais: O Caso da Propagação Estável de Trincas', instrutor: 'Eduardo Atem de Carvalho – Professor da UENF', horaInicio: '17:00', horaFim: '18:00'},
       {tipo: 'geral', titulo: 'Coquetel de Boas Vindas', horaInicio: '18:30', horaFim: '20:00'},      
@@ -53,7 +53,7 @@ export class HomePage {
       {tipo: 'plESes', titulo: 'Sessões técnica e Sessão Pôsteres', horaInicio: '11:00', horaFim: '12:30'},
       {tipo: 'geral', titulo: 'Almoço', horaInicio: '12:30', horaFim: '14:00'},
       {tipo: 'plESes', titulo: 'Sessão Técnica e Palestra de Sessão', horaInicio: '14:00', horaFim: '15:30'},
-      {tipo: 'geral', titulo: 'Coffee Break - Painel II - Sessão Pôsteres', horaInicio: '15:30', horaFim: '16:00'},
+      {tipo: 'geral', titulo: 'Coffee Break - Painel II: Barco Movido a Energia Solar, o Barco Bismarck Solaris - Sessão Pôsteres', horaInicio: '15:30', horaFim: '16:00'},
       {tipo: 'plESes', titulo: 'Palestra 2: MDO: An Outstanding Methodology For Aircraft Design', instrutor: 'Ana Paula Curty Cuco – Engenheira de Desenvolvimento de Produto da Embraer', horaInicio: '16:00', horaFim: '17:00'},
       {tipo: 'plESes', titulo: 'Sessão Técnica - Reunião dos Coordenadores de PPG', horaInicio: '17:00', horaFim: '18:00'},
       {tipo: 'geral', titulo: '*Jantar por Adesão', horaInicio: '18:30', horaFim: '20:00'}
