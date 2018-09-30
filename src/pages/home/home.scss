@@ -1,6 +1,6 @@
 page-home {
 .toolbar-background-md{    
-    background: orange;
+    background: white;
 }
 
 .btnGeral{
@@ -13,6 +13,7 @@ page-home {
 .pularLinha{
     white-space: 'pre-line';
 }
+
 
 .btnPM{
     width: 33%;
@@ -83,20 +84,28 @@ text-align: left;
 }
 
 .reduzMargimBottom{
-    margin-bottom: 0%;
+    margin-bottom: 0px;
+    margin-top: 1px;
+    
 }
 .reduzMargimTop{
-    margin-top: 0%;
+    margin-top: 1px;
+    margin-bottom: 0px;
+    
 }
 .card-content-md{
     color: white;
 }
 .imgLogo{
-    width: 80px;
+    width: 100%;
 }
 .backFooter{
     background-color: #565656;
     color: #ffffff;
     margin-top: 2%;
   }
+.imgCNPQ{
+   width: 45px !important;
+}
+
 }
