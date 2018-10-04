@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import {GeralPage} from '../pages/geral/geral';
 import {PalestrasMinicursosPage} from '../pages/palestras-minicursos/palestras-minicursos'
 import {SessaoTecnicaPage} from '../pages/sessao-tecnica/sessao-tecnica';
+import { ExpandableComponent } from '../components/expandable/expandable';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {SessaoTecnicaPage} from '../pages/sessao-tecnica/sessao-tecnica';
     HomePage,
     GeralPage,
     PalestrasMinicursosPage,
-    SessaoTecnicaPage
+    SessaoTecnicaPage,
+    ExpandableComponent
   ],
   imports: [
     BrowserModule,
