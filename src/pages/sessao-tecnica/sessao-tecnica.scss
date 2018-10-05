@@ -61,10 +61,11 @@ page-sessao-tecnica {
         font-style: normal;
         color: darkgray;
     }
-    .card-md{
+    /*.card-md{
         background: rgba(245, 163, 11, 0.952);
         color: whitesmoke;
     }
+    */
     .card-title-md{
         color: white;
         text-align: center;
@@ -73,7 +74,9 @@ page-sessao-tecnica {
     }
     
     .horario{
-        border-right: 1px solid white;
+        
+        padding: 2% 5% 0 2%;
+        margin-right: 5%;
     }
     
     .titleHorario{

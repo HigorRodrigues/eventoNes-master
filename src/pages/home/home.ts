@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController } from 'ionic-angular';
+import { NavController} from 'ionic-angular';
 import {GeralPage} from '../geral/geral';
 import {PalestrasMinicursosPage} from '../palestras-minicursos/palestras-minicursos';
 import {SessaoTecnicaPage} from '../sessao-tecnica/sessao-tecnica';
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -74,11 +75,20 @@ export class HomePage {
   data: string;
   categoria: string;
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController) {   
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {   
     this.data = "dia8";
     this.lista = this.dia8;
   }
  
+  mostrarToast(texto) {
+    const toast = this.toastCtrl.create({
+      message: 'Não temos ' + texto + ' para essa data!',
+      position: 'middle',
+      duration: 3000      
+    });
+    toast.present();
+  }
+
   limparLista(event) {
     if( this.data == "dia8"){
       this.lista = this.dia8;
@@ -117,7 +127,8 @@ export class HomePage {
       this.navCtrl.push(PalestrasMinicursosPage, {lista: this.retornoTipo(this.dia8, 'minicurso'), dia: "08/10"});
     }
     else if (this.data == "dia9") {
-      this.navCtrl.push(PalestrasMinicursosPage, {lista: this.retornoTipo(this.dia9, 'minicurso'), dia: "09/10"});
+      //this.navCtrl.push(PalestrasMinicursosPage, {lista: this.retornoTipo(this.dia9, 'minicurso'), dia: "09/10"});
+      this.mostrarToast("minicurso");       
     }
     else if (this.data == "dia10") {
       this.navCtrl.push(PalestrasMinicursosPage, {lista: this.retornoTipo(this.dia10, 'minicurso'), dia: "10/10"});
@@ -127,7 +138,8 @@ export class HomePage {
   //falta implemetar
   sessoesTecnicas(event) {        
     if (this.data == "dia8") {
-      this.navCtrl.push(SessaoTecnicaPage, {lista: this.retornoTipo(this.dia8, 'plESes'), dia: "08/10"});
+      this.mostrarToast("sessões");
+      //this.navCtrl.push(SessaoTecnicaPage, {lista: this.retornoTipo(this.dia8, 'plESes'), dia: "08/10"});
     }
     else if (this.data == "dia9") {
       this.navCtrl.push(SessaoTecnicaPage, {lista: this.retornoTipo(this.dia9, 'plESes'), dia: '09/10'});
