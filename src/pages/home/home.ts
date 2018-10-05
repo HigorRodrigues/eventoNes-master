@@ -75,19 +75,9 @@ export class HomePage {
   categoria: string;
 
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController) {   
+    this.data = "dia8";
+    this.lista = this.dia8;
   }
-
-/*  geralPage(): void{
-    this.navCtrl.push(GeralPage);
-  }
-
-  palestrasMinicursosPage(): void{
-    this.navCtrl.push(PalestrasMinicursosPage);
-  }
-
-  sessaoTecnicaPage(): void{
-    this.navCtrl.push(SessaoTecnicaPage);
-  }*/
  
   limparLista(event) {
     if( this.data == "dia8"){

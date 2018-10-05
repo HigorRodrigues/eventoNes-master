@@ -1,12 +1,11 @@
 
 <ion-header>
-
   <ion-navbar>
     <ion-title>Sessões Tecnicas ({{dia}})</ion-title>
   </ion-navbar>
 
   <div class="menuToolbar">
-    <ion-segment [(ngModel)]="tipo">
+    <ion-segment [(ngModel)]="tipoSessao">
       <ion-segment-button value="orais" >
         Apresentação Orais
       </ion-segment-button>
@@ -24,60 +23,115 @@
         <ion-icon name="time"></ion-icon> 
         {{ses.nome}}: {{ses.horario}}
       </h1>
-      
-      <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of tituloSessao1">
+      <button detail-none (click)="expandItemOral(tituloOral1, item)" ion-item *ngFor="let item of tituloOral1">
         <h3>{{item.nome}}</h3>
-        <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
-          Aqui entra a lista
+        <expandable [expanded]="item.expanded">
+          <ion-list>
+            <ion-card class="backCard" *ngFor="let v of lista">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-3 class="horario">
+                    {{v.horaInicio}} - {{v.horaFim}}
+                  </ion-col>
+                  <ion-col colorInCard bordaCard>
+                      <strong>{{v.titulo}}</strong>  
+                  </ion-col>
+                </ion-row>                         
+              </ion-grid>                        
+            </ion-card>
+          </ion-list>
         </expandable> 
       </button>    
     </ion-item>
   </ion-list>
 
   <ion-list>
-      <ion-item *ngFor="let ses of sessao2">
-        <h1>
-          <ion-icon name="time"></ion-icon> 
-          {{ses.nome}}: {{ses.horario}}
-        </h1>
-        
-        <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of items">
-          <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
-            Aqui entra a lista
-          </expandable> 
-        </button>    
-      </ion-item>
-    </ion-list>
+    <ion-item *ngFor="let ses of sessao2">
+      <h1>
+        <ion-icon name="time"></ion-icon> 
+        {{ses.nome}}: {{ses.horario}}
+      </h1>
+      
+      <button detail-none (click)="expandItemOral(tituloOral2, item)" ion-item *ngFor="let item of tituloOral2">
+        <h3>{{item.nome}}</h3>
+        <expandable [expanded]="item.expanded">
+          <ion-list>
+            <ion-card class="backCard" *ngFor="let v of lista">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-3 class="horario">
+                    {{v.horaInicio}} - {{v.horaFim}}
+                  </ion-col>
+                  <ion-col colorInCard bordaCard>
+                    <strong>{{v.titulo}}</strong>  
+                  </ion-col>
+                </ion-row>                         
+              </ion-grid>                        
+            </ion-card>
+          </ion-list>
+        </expandable> 
+      </button>    
+    </ion-item>
+  </ion-list>
 
-    <ion-list>
-        <ion-item *ngFor="let ses of sessao3">
-          <h1>
-            <ion-icon name="time"></ion-icon> 
-            {{ses.nome}}: {{ses.horario}}
-          </h1>
+  <ion-list>
+    <ion-item *ngFor="let ses of sessao3">
+      <h1>
+        <ion-icon name="time"></ion-icon> 
+        {{ses.nome}}: {{ses.horario}}
+      </h1>
           
-          <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of items">
-            <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
-              Aqui entra a lista
-            </expandable> 
-          </button>    
-        </ion-item>
-      </ion-list>
+      <button detail-none (click)="expandItemOral(tituloOral3, item)" ion-item *ngFor="let item of tituloOral3">
+        <h3>{{item.nome}}</h3>
+        <expandable [expanded]="item.expanded">
+          <ion-list>
+            <ion-card class="backCard" *ngFor="let v of lista">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-3 class="horario">
+                    {{v.horaInicio}} - {{v.horaFim}}
+                  </ion-col>
+                  <ion-col colorInCard bordaCard>
+                    <strong>{{v.titulo}}</strong>  
+                  </ion-col>
+                </ion-row>                         
+              </ion-grid>                        
+            </ion-card>
+          </ion-list>
+        </expandable> 
+      </button>    
+    </ion-item>
+  </ion-list>
 
-      <ion-list>
-          <ion-item *ngFor="let ses of sessao4">
-            <h1>
-              <ion-icon name="time"></ion-icon> 
-              {{ses.nome}}: {{ses.horario}}
-            </h1>
+  <ion-list>
+    <ion-item *ngFor="let ses of sessao4">
+      <h1>
+        <ion-icon name="time"></ion-icon> 
+        {{ses.nome}}: {{ses.horario}}
+      </h1>
             
-            <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of items">
-              <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
-                Aqui entra a lista
-              </expandable> 
-            </button>    
-          </ion-item>
-        </ion-list>
+      <button detail-none (click)="expandItemOral(tituloOral4, item)" ion-item *ngFor="let item of tituloOral4">
+        <h3>{{item.nome}}</h3>
+        <expandable [expanded]="item.expanded">
+          <ion-list>
+            <ion-card class="backCard" *ngFor="let v of lista">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-3 class="horario">
+                    {{v.horaInicio}} - {{v.horaFim}}
+                  </ion-col>
+                  <ion-col colorInCard bordaCard>
+                    <strong>{{v.titulo}}</strong>  
+                  </ion-col>
+                </ion-row>                         
+              </ion-grid>                        
+            </ion-card>
+          </ion-list>
+        </expandable> 
+      </button>    
+    </ion-item>
+  </ion-list>  
+
 </ion-content>
 
 <ion-footer class="backFooter" text-center>
