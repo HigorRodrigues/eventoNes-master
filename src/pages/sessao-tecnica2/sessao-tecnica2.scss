@@ -1,3 +1,102 @@
 page-sessao-tecnica2 {
-
+    .toolbar-background-md{    
+        background: orange;
+    }
+    
+    .btnGeral{
+        width: 33%;
+        float: left;
+        clear: none; 
+        margin: 0.10%;
+    }
+    
+    .pularLinha{
+        white-space: 'pre-line';
+    }
+    
+    .btnPM{
+        width: 33%;
+        float: left;
+        clear: initial;
+        margin: 0.10%;
+    }
+    
+    .btnST{
+        width: 33%;
+        float: left;
+        clear: unset;
+        margin: 0.10%;
+    }
+    
+    .button-outline-md{
+        border-width: 1px;
+        border-style: solid;
+        border-color: darkgray;
+        color: white;
+        opacity: 0.7;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        background-color: orange;
+    }
+    
+    .toolbar-title-md{
+        color: white;
+    }    
+    text-align: left;
+    .segment-md .segment-button{
+        color: white;
+        background-color: orange;
+    }
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated{
+        border-color: darkgray;
+    }
+    
+    .button:hover{
+        color: orange;
+        background-color: white;
+    }
+    
+    .label{
+        text-align: left;
+        font-style: normal;
+        color: darkgray;
+    }
+    .card-md{
+        background: rgba(245, 163, 11, 0.952);
+        color: whitesmoke;
+    }
+    .card-title-md{
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        font-style:normal; 
+    }
+    
+    .horario{
+        border-right: 1px solid white;
+    }
+    
+    .titleHorario{
+        border-bottom: 1px solid white;
+        text-align: center;
+        padding-top: 3%;
+    }
+    
+    .reduzMargimBottom{
+        margin-bottom: 0%;
+    }
+    .reduzMargimTop{
+        margin-top: 0%;
+    }
+    .card-content-md{
+        color: white;
+    }
+    .imgLogo{
+        width: 80px;
+    }
+    .backFooter{
+        background-color: #565656;
+        color: #ffffff;
+        margin-top: 2%;
+    }
 }

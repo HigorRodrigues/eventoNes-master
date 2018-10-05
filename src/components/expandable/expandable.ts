@@ -10,6 +10,7 @@ export class ExpandableComponent {
   @Input('expanded') expanded;
   @Input('expandHeight') expandHeight;
 
+  
   constructor(public renderer: Renderer) {
   }
 

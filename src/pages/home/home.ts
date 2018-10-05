@@ -4,6 +4,8 @@ import {GeralPage} from '../geral/geral';
 import {PalestrasMinicursosPage} from '../palestras-minicursos/palestras-minicursos';
 import {SessaoTecnicaPage} from '../sessao-tecnica/sessao-tecnica';
 import { ToastController } from 'ionic-angular';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { SessaoTecnica2Page } from '../sessao-tecnica2/sessao-tecnica2';
 
 @Component({
   selector: 'page-home',
@@ -42,20 +44,20 @@ export class HomePage {
       {tipo: 'geral', titulo: 'Almoço', horaInicio: '12:30', horaFim: '14:00'},
       {tipo: 'geral', titulo: 'Cerimônia de abertura', horaInicio: '14:00', horaFim: '14:30'},
       {tipo: 'plESes', titulo: 'Palestra de Abertura: Desafios da Ciência', instrutor: 'Rodolfo Jardim de Azevedo – Diretor do Instituto de Computação da Unicamp', horaInicio: '14:30', horaFim: '15:30'},
-      {tipo: 'geral', titulo: 'Coffee Break - Painel I: As aplicações da Modelagem Computacional na Física', horaInicio: '15:30', horaFim: '16:00'},
+      {tipo: 'geral', titulo: 'Orquestra de Violões - Painel I: As aplicações da Modelagem Computacional na Física', horaInicio: '15:30', horaFim: '16:00'},
       {tipo: 'plESes', titulo: 'Palestra em Modelagem Computacional: Modelagem Computacional do Comportamento dos Tecidos do Corpo Humano', instrutor: 'Aura Conci – Professora da UFF', horaInicio: '16:00', horaFim: '17:00'},
-      {tipo: 'plESes', titulo: 'Palestra em Ciência e Tecnologia de Materiais: Modelagem Numérica de Falha de Materiais: O Caso da Propagação Estável de Trincas', instrutor: 'Eduardo Atem de Carvalho – Professor da UENF', horaInicio: '17:00', horaFim: '18:00'},
+      {tipo: 'plESes', titulo: 'Momento com coordenadores da área Interdisciplinar - CAPES', horaInicio: '17:00', horaFim: '18:00'},
       {tipo: 'geral', titulo: 'Coquetel de Boas Vindas', horaInicio: '18:30', horaFim: '20:00'},      
     ];
 
     dia9 = [ 
-      {tipo: 'plESes', titulo: 'Palestra em Sessão Técnica: Espectroscopia Fotoacústica: Breve Introdução e Algumas Aplicações', instrutor: 'Noberto Cella – Professor do IPRJ/UERJ', horaInicio: '08:00', horaFim: '10:00'},
+      {tipo: 'plESes', titulo: 'Sessão Técnica', horaInicio: '08:00', horaFim: '10:00'},
       {tipo: 'plESes', titulo: 'Palestra 1: Polo de Inovação do IFFluminense no Modelo Embrapii: como a Modelagem Computacional e a Tecnologia dos Materiais podem contribuir na execução dos projetos', instrutor: 'Vicente de Paulo Santos de Oliveira – Pró-Reitor de Pesquisa, Extensão e Inovação do IFFluminense', horaInicio: '10:00', horaFim: '11:00'},
       {tipo: 'plESes', titulo: 'Sessões técnica e Sessão Pôsteres', horaInicio: '11:00', horaFim: '12:30'},
       {tipo: 'geral', titulo: 'Almoço', horaInicio: '12:30', horaFim: '14:00'},
       {tipo: 'plESes', titulo: 'Sessão Técnica e Palestra de Sessão', horaInicio: '14:00', horaFim: '15:30'},
-      {tipo: 'geral', titulo: 'Coffee Break - Painel II: Barco Movido a Energia Solar, o Barco Bismarck Solaris - Sessão Pôsteres', horaInicio: '15:30', horaFim: '16:00'},
-      {tipo: 'plESes', titulo: 'Palestra 2: MDO: An Outstanding Methodology For Aircraft Design', instrutor: 'Ana Paula Curty Cuco – Engenheira de Desenvolvimento de Produto da Embraer', horaInicio: '16:00', horaFim: '17:00'},
+      {tipo: 'geral', titulo: 'Coffee Break - Lançamento de Livros - Sessão Pôsteres', horaInicio: '15:30', horaFim: '16:00'},
+      {tipo: 'plESes', titulo: 'Palestra em Ciência e Tecnologia dos Materiais', horaInicio: '16:00', horaFim: '17:00'},
       {tipo: 'plESes', titulo: 'Sessão Técnica - Reunião dos Coordenadores de PPG', horaInicio: '17:00', horaFim: '18:00'},
       {tipo: 'geral', titulo: '*Jantar por Adesão', horaInicio: '18:30', horaFim: '20:00'}
     ];
@@ -75,11 +77,25 @@ export class HomePage {
   data: string;
   categoria: string;
 
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {   
+  constructor(private screenOrientation: ScreenOrientation, public navCtrl: NavController, public toastCtrl: ToastController) {       
     this.data = "dia8";
     this.lista = this.dia8;
+    //this.lockScreenOrientatio();
   }
  
+  lockScreenOrientatio(){
+    try{
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
+    }
+    catch( error ){
+      console.error(error);
+    }    
+  }
+
+  unlockScreenOrientation(){
+    this.screenOrientation.unlock();
+  }
+
   mostrarToast(texto) {
     const toast = this.toastCtrl.create({
       message: 'Não temos ' + texto + ' para essa data!',
@@ -112,13 +128,13 @@ export class HomePage {
 
   geral(event){
     if (this.data == "dia8") {
-      this.navCtrl.push(GeralPage, {lista: this.retornoTipo(this.dia8, 'geral'), dia: "08/10"});
+      this.navCtrl.push(GeralPage, {lista: this.dia8, dia: "08/10"});
     }
     else if (this.data == "dia9") {
-      this.navCtrl.push(GeralPage, {lista: this.retornoTipo(this.dia9, 'geral'), dia: "09/10"});
+      this.navCtrl.push(GeralPage, {lista: this.dia9, dia: "09/10"});
     }
     else if (this.data == "dia10") {
-      this.navCtrl.push(GeralPage, {lista: this.retornoTipo(this.dia10, 'geral'), dia: "10/10"});
+      this.navCtrl.push(GeralPage, {lista: this.dia10, dia: "10/10"});
     }
   }
 
@@ -138,22 +154,14 @@ export class HomePage {
   //falta implemetar
   sessoesTecnicas(event) {        
     if (this.data == "dia8") {
-      this.mostrarToast("sessões");
-      //this.navCtrl.push(SessaoTecnicaPage, {lista: this.retornoTipo(this.dia8, 'plESes'), dia: "08/10"});
+      this.mostrarToast("sessões");      
     }
     else if (this.data == "dia9") {
-      this.navCtrl.push(SessaoTecnicaPage, {lista: this.retornoTipo(this.dia9, 'plESes'), dia: '09/10'});
+      this.navCtrl.push(SessaoTecnicaPage, {dia: '09/10'});
     }
     else if (this.data == "dia10") {
-      this.navCtrl.push(SessaoTecnicaPage, {lista: this.retornoTipo(this.dia10, 'plESes'), dia: '10/10'});
+      this.navCtrl.push(SessaoTecnica2Page, {dia: '10/10'});
     }
   }
 
-  emitMessage(){
-
-  }
-
-  selectCategoria($event, cat) {
-    console.log("Categoria selecionada: " + cat);
-  }
 }

@@ -1,4 +1,4 @@
-page-sessao-tecnica {
+page-apresentacao-oral {
     .toolbar-background-md{    
         background: orange;
     }
@@ -71,6 +71,12 @@ page-sessao-tecnica {
         font-size: 18px;
         font-style:normal; 
     }
+
+    .titleC{
+        padding: 5%;
+        color: white;
+        background-color: black;
+    }
     
     .horario{
         border-right: 1px solid white;
@@ -98,5 +104,5 @@ page-sessao-tecnica {
         background-color: #565656;
         color: #ffffff;
         margin-top: 2%;
-    }  
+    }
 }

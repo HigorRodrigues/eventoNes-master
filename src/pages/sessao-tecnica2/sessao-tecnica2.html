@@ -1,18 +1,98 @@
-<!--
-  Generated template for the SessaoTecnica2Page page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
+    <ion-navbar>
+      <ion-title>Sessões Tecnicas ({{dia}})</ion-title>
+    </ion-navbar>
+  
+    <div class="menuToolbar">
+      <ion-segment [(ngModel)]="tipoSessao">
+        <ion-segment-button value="orais" >
+          Apresentação Orais
+        </ion-segment-button>
+        <ion-segment-button value="poster" >
+          Pôsteres
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+  </ion-header>
+  
+  <ion-content>    
+    <div [ngSwitch]="tipoSessao">
+      <div *ngSwitchCase="'orais'">              
+  
+        <ion-card>
+          <ion-card-header>
+            <ion-icon name="clock"></ion-icon> {{sessao1[0].nome}} - {{sessao1[0].horario}}
+          </ion-card-header>
+  
+          <ion-list>
+            <button (click)="apresentarOral(titulo)" ion-item *ngFor="let titulo of tituloOral1">
+                {{titulo.nome}}
+            </button>
+          </ion-list>
+        </ion-card>
+        
+        <ion-card>
+          <ion-card-header>
+            <ion-icon name="clock"></ion-icon> {{sessao2[0].nome}} - {{sessao2[0].horario}}
+          </ion-card-header>
+  
+          <ion-list>
+            <button (click)="apresentarOral(titulo)" ion-item *ngFor="let titulo of tituloOral2">
+                {{titulo.nome}}
+            </button>
+          </ion-list>
+        </ion-card>
+  
+        <ion-card>
+          <ion-card-header>
+            <ion-icon name="clock"></ion-icon> {{sessao3[0].nome}} - {{sessao3[0].horario}}
+          </ion-card-header>
+  
+          <ion-list>
+            <button (click)="apresentarOral(titulo)" ion-item *ngFor="let titulo of tituloOral3">
+                {{titulo.nome}}
+            </button>
+          </ion-list>
+        </ion-card>          
+      </div>
+    </div>
+  
+    <div [ngSwitch]="tipoSessao">
+      <div *ngSwitchCase="'poster'">
+        
+        <ion-card>
+          <ion-card-header>
+            <ion-icon name="clock"></ion-icon> {{sessaop1[0].nome}} - {{sessaop1[0].horario}}
+          </ion-card-header>
+    
+          <ion-list>
+            <button (click)="apresentarPoster(titulo)" ion-item *ngFor="let titulo of titluloPS1">
+              {{titulo.titulo}}
+            </button>
+          </ion-list>
+        </ion-card>      
+  
+        <ion-card>
+          <ion-card-header>
+            <ion-icon name="clock"></ion-icon> {{sessaop2[0].nome}} - {{sessaop2[0].horario}}
+          </ion-card-header>
+  
+          <ion-list>
+            <button (click)="apresentarPoster(titulo)" ion-item *ngFor="let titulo of titluloPS2">
+                {{titulo.titulo}}
+            </button>
+          </ion-list>
+        </ion-card>
+          
+      </div>
+    </div>
+  </ion-content>
 
-  <ion-navbar>
-    <ion-title>sessao-tecnica2</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+<ion-footer class="backFooter" text-center>
+    <p class="reduzMargimBottom">
+      &copy; NES - Núcleo de Engenharia de Software
+    </p>
+    <p class="reduzMargimTop">
+      IF Fluminense/PICG
+    </p>
+  </ion-footer>

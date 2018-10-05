@@ -10,6 +10,10 @@ import {GeralPage} from '../pages/geral/geral';
 import {PalestrasMinicursosPage} from '../pages/palestras-minicursos/palestras-minicursos'
 import {SessaoTecnicaPage} from '../pages/sessao-tecnica/sessao-tecnica';
 import { ExpandableComponent } from '../components/expandable/expandable';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { ApresentacaoOralPage } from '../pages/apresentacao-oral/apresentacao-oral';
+import { ApresentacaoPosterPage } from '../pages/apresentacao-poster/apresentacao-poster';
+import { SessaoTecnica2Page } from '../pages/sessao-tecnica2/sessao-tecnica2';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,9 @@ import { ExpandableComponent } from '../components/expandable/expandable';
     GeralPage,
     PalestrasMinicursosPage,
     SessaoTecnicaPage,
+    ApresentacaoOralPage,
+    ApresentacaoPosterPage,
+    SessaoTecnica2Page,
     ExpandableComponent
   ],
   imports: [
@@ -30,11 +37,15 @@ import { ExpandableComponent } from '../components/expandable/expandable';
     HomePage,
     GeralPage,
     PalestrasMinicursosPage,
+    ApresentacaoOralPage,
+    ApresentacaoPosterPage,
+    SessaoTecnica2Page,
     SessaoTecnicaPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    ScreenOrientation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ApresentacaoOralPage } from '../apresentacao-oral/apresentacao-oral';
+import { ApresentacaoPosterPage } from '../apresentacao-poster/apresentacao-poster';
 @IonicPage()
 @Component({
   selector: 'page-sessao-tecnica',
   templateUrl: 'sessao-tecnica.html',
 })
 export class SessaoTecnicaPage {
- 
   tipoSessao: string = "orais";
-  sessionList = [];
   dia;
- 
+  expandHeight: number = 100;
   lista: any;
     
   tituloSessao1Sala1 = [ 
@@ -200,10 +200,10 @@ export class SessaoTecnicaPage {
   ];
 
   tituloOral4 = [
-    {nome: "Sala 1 – Aplicações em Engenharia Química", expanded: false, variavel: this.tituloSessao4Sala1},
-    {nome: "Sala 2 – Modelagem, Simulação e Controle de Processos", expanded: false, variavel: this.tituloSessao4Sala2},
-    {nome: "Sala 3 – Aplicações em Engenharia Química", expanded: false, variavel: this.tituloSessao4Sala3},
-    {nome: "Sala 4 – Modelagem, Simulação e Controle de Processos", expanded: false, variavel: this.tituloSessao4Sala4},
+    {nome: "Sala 1 – Aplicações em Engenharia Química", diplay: 'none', expanded: false, variavel: this.tituloSessao4Sala1},
+    {nome: "Sala 2 – Modelagem, Simulação e Controle de Processos", diplay: 'none', expanded: false, variavel: this.tituloSessao4Sala2},
+    {nome: "Sala 3 – Aplicações em Engenharia Química", diplay: 'none', expanded: false, variavel: this.tituloSessao4Sala3},
+    {nome: "Sala 4 – Modelagem, Simulação e Controle de Processos", diplay: 'none', expanded: false, variavel: this.tituloSessao4Sala4},
   ];
 
   sessao1 = [{nome: "Sessão 1", horario: "8h15 às 10h"}];
@@ -211,27 +211,134 @@ export class SessaoTecnicaPage {
   sessao3 = [{nome: "Sessão 3", horario: "14h às 15h"}];
   sessao4 = [{nome: "Sessão 4", horario: "17h às 18h15"}];
 
-  teste = [
-    {sessao: this.sessao1},
-    {sessao: this.sessao2},
-    {sessao: this.sessao3},
-    {sessao: this.sessao4}
+  //sessão pôsteres do dia 09
+  pImagens = [
+    {poster: "P1", titulo: "Simulação do Processo de Exploração de Amostras em Tomografia Computadorizada Usando o Código X-Ray Monte Carlo"}, 
+    {poster: "P2", titulo: "Método Semi-Automático Avançado Para Colorização de Imagens em Tons de Cinza"},
+    {poster: "P3", titulo:"Proposta de Metodologia Para Análise do Efeito de Branqueamento do PVDF Através do Processamento de Imagens"},
+    {poster: "P4", titulo:"Modelo Computacional de Detecção e Reconhecimento da Linguagem Brasileira de Sinais"}, 
+    {poster: "P5", titulo:"Avaliando Diferentes Implementações do Descritor de Cor Dominante"}, 
+    {poster: "P6", titulo:"Odometria Visual Para Navegação Autônoma"}, 
+    {poster: "P7", titulo:"Proposta de Melhorias em Ferramenta de Detecção de Bordas em Imagens Termográficas de Mamas"}
   ];
+
+  pOtimizacao = [
+    {poster: "P8", titulo: "Otimização dos Custos Financeiros de uma Madeireira Utilizando Programação Linear"}, 
+    {poster: "P9", titulo: "Análise de Viabilidade Através de Simulação de Conversão Prioritária em um Cruzamento com Uso de Modelagem Computacional"}, 
+    {poster: "P10", titulo: "Problemas de Fluxo de Custo Mínimo: Uma Introdução aos Algoritmos de Busacker e Gowen e de Ford e Fulkerson"}, 
+    {poster: "P11", titulo: "Caminho Mínimo de Redes Conectadas"}, 
+    {poster: "P12", titulo: "Otimização Dimensional e Geométrica de Estruturas Treliçadas para Diversas Concepções Arquitetônicas e Estruturais"}, 
+    {poster: "P13", titulo: "O Estado da Arte da Programação Linear na Agromatemática"}, 
+    {poster: "P14", titulo: "Método de Análise Por Envoltória de Dados para Avaliação de um Nicho de Televisores no Mercado Nacional"}, 
+    {poster: "P15", titulo: "Delineamento de Experimento de Mistura na Otimização de Dosagem de Argamassa de Revestimento"},
+    {poster: "P16", titulo: "Estudo de Métodos de Minimização para um Problema Black Box"},
+    {poster: "P17", titulo: "Uma Abordagem Comparativa entre Métodos de Categorização e Classificação Aplicados à Satisfação de Clientes com Serviços Bancários"}
+  ];
+
+  //modelagem, simulação e controle de processos
+  pMSCP = [
+    {poster: "P18", titulo: "Modelagem e Simulação de um Módulo Fotovoltaico com Modelica"},
+    {poster: "P19", titulo: "Projeto e Análise de Controladores Pid para o Controle de Nível de Líquido em um Tanque em Planta Piloto"},
+    {poster: "P20", titulo: "Aplicação do Método da Análise Frequencial para o Projeto de Controladores em uma Planta Piloto"},
+    {poster: "P21", titulo: "Simulation and Study of Parametric Sensitivity of a Fixed-Beb Reactorfor Phthalic Anhydride Synthesis"},
+    {poster: "P22", titulo: "Implementation of a Meteorological Station Model Programed for Alert and Data Supply in Risk Communities in the Serrana Region of the Stateof Rio de Janeiro"},
+    {poster: "P23", titulo: "Análise Envoltória de dados Financeiro-Contábil na Avaliação de Micro e Pequenas Empresas"},
+    {poster: "P24", titulo: "Multicriteria Modeling of the 2018 World Cup Using Prométhée Ii Method"},
+    {poster: "P25", titulo: "Navegação Automatizada para Embarcação de Pequeno Porte com Uso de Controlador Proporcional-Integral-Derivativo"},
+    {poster: "P26", titulo: "Otimização de Layout na Linha de Montagem de uma Indústria Têxtilcom Uso de Simulação Computacional"},
+    {poster: "P27", titulo: "Análise Comparativa Entre as Estratégias de Controle Pid e Fuzzy  Aplicadas ao Controle de Velocidade de Máquinas de Indução Trifásicas"},
+    {poster: "P28", titulo: "Modelagem e Controle de um Trocador de Calor de Tubos Concêntricos"},
+    {poster: "P29", titulo: "Utilização da Estratégia Estritamente Dominante da Teoria dos Jogos para Sintonia Otimizada de Controladores Pi"},
+    {poster: "P30", titulo: "Sistema de Captação de Energia Solar e Acumulador de Calor para a Secagem de Amêndoas de Cacau"},
+    {poster: "P31", titulo: "Ranqueamento dos Países Emissores de CO2 a Partir da Identidade de Kaya: Modelagem Multicritério do G20"},
+    {poster: "P32", titulo: "Controle por Bandas Aplicado ao Problema de Escoamento por Regime de Golfadas"}
+  ];
+
+  //MétodosComputacionais
+  pMComputacionais1 = [
+    {poster: "P33", titulo: "Uma Abordagem Híbrida para a Resolução do Problema do Rodízio de Tripulações"},
+    {poster: "P34", titulo: "Robust Kalman Filter for Descriptor Systems in a Data Fusion Scenario"},
+    {poster: "P35", titulo: "Uma Implementação Simples por OpenMP de Variante da Busca em Largura"},    
+    {poster: "P36", titulo: "Utilização de um Algoritmo de Associação para a Descoberta de Aspectos Relacionados à Repetência Escolar"},
+    {poster: "P37", titulo: "Characterization and Analysis of the Urban Road Network of Santarém / Pa Using Betweenness Centrality on Graphs Theory"},
+    {poster: "P38", titulo: "Análise de Arquiteturas de Deep Learning Aplicado a um Benchmark de Classificação"},
+    {poster: "P39", titulo: "Quality Control and Assurance of Lidar Data"},
+    {poster: "P40", titulo: "Análise Topológica de Dados Para Caracterização de Periodicidade em Séries Temporais de Dados Pluviométricos"},
+    {poster: "P41", titulo: "Prediction of Solar Radiation By Using Neural Network Model"},
+    {poster: "P42", titulo: "Aplicação da Teoria de Redes Para Análise Logística dos Hubports da Cabotagem Brasileira"},
+    {poster: "P43", titulo: "Usando o Algoritmo K-Médias Para Classificar o Perfil Empreendedordos Estudantes do Instituto Federal do Norte de Minas Gerais (IFNMG) – Campus Montes Claros"}
+  ];
+
+  pMComputacionais2 = [
+    {poster: "P45", titulo: "Comparação de Métodos de Aprendizado de Máquina para a Previsão de Curto Prazo de Vazão do Baixo Curso do Rio Paraíba do Sul"}, 
+    {poster: "P46", titulo: "Otimização de Tripulações em Ônibus Urbano: Um Método Híbrido Utilizando Programação com Restrições e Algoritmos Genéticos"}, 
+    {poster: "P47", titulo: "Análise Temporal dos Homicídios Registrados na Bahia no Período 2012 a 2016: Uma Abordagem com os Modelos Auto-Regressivos de Médias Móveis"},
+    {poster: "P48", titulo: "Unit Testing Framework for Finite Element Based Computational Biomechanics Software"},
+    {poster: "P49", titulo: "Estudo de Materiais para Aperfeçoamento da Blindagem da Linha de Produção de Iodo-123 para o Acelerador Cyclotron CV-28"},
+    {poster: "P50", titulo: "Classificação de Linguagens de Programação Utilizando Técnicas de Machine Learning"},
+    {poster: "P51", titulo: "Aplicação do Método AHP para Escolha de Linguagem de Modelagem de Processos de Negócio"}
+  ];
+
+  //Materiais Metálicos e Compósitos
+  pMMC = [
+    {poster: "P52", titulo: "Mechanical Properties of Two Epoxy Adhesives With Different Curing Time"},
+    {poster: "P23", titulo: "Compósitos Poliméricos de Resina de Óleo de Mamona Reforçados Com Bagaço de Cana: Propriedades e Características Estruturais"},
+    {poster: "P54", titulo: "Análise da Resistência à Punctura do Cobre por Ensaio Padronizado de Ultramicrodureza"},
+    {poster: "P55", titulo: "Análise Numérica do Efeito da Geometria na Resistência de um Sistema de Implante Dentário"},
+    {poster: "P56", titulo: "Influência dos Parâmetros de Corte nas Tensões Residuais e na Rugosidade no Fresamento de Aço Maraging 300"},
+    {poster: "P57", titulo: "Quimiometria Aplicada a Eletroquímica na Determinação da Sensitização do Aço Inoxidavel Superduplex UNS S32750"}
+  ];
+
+  pMatematicaAplicada = [
+    {poster: "P58", titulo: "Uso do Método de Otimização de Parâmetros para Resolver Equações Diferenciais com Condições de Contorno"},
+    {poster: "P59", titulo: "Solução Numérica da Equação de Blasius"},
+    {poster: "P60", titulo: "Análise de Desacoplamento das Emissões de CO2 e o Crescimento Econômico"},
+    {poster: "P61", titulo: "One-Dimensional Model Applied Temperature Distribution of Grain Stored In a Silo"},
+    {poster: "P62", titulo: "Web Semântica em Monitoramento Ambiental: Descrição Formal de Interface de Acesso de Sensores e Atuadores"},
+    {poster: "P63", titulo: "Redes Semânticas Complexas de Títulos do Ensino de Física"},
+    {poster: "PP1", titulo: "Implementação dos Modelos das Propriedades Termodinâmicas do Ar Úmido e da Radiação Solar no Scilab"},
+    {poster: "P64", titulo: "A Time Series Study of Incidence of Dengue in Municipalities of Bahia By Ondaletas Haar"}, 
+    {poster: "P65", titulo: "Método Fredholm para Função de Onda Quântica de Podolsky"},
+    {poster: "P66", titulo: "Trend Analysis for the Volume of Maximum Precipitations in the Mineira Capital Using Hust Exponent Estimate"},
+    {poster: "P67", titulo: "Reological Computational Study During Grain Displacement"},
+    {poster: "P68", titulo: "Desenvolvimento de uma Aplicação Visual para Análise de Sinais"},
+    {poster: "P69", titulo: "Aplicação da Equação do Calor em uma Chapa Bidimensional Através de Séries de Fourier"},
+    {poster: "P70", titulo: "Sistemas Complexos e Ciências das Redes: Redes Semânticas Baseadas em Abstracts e Keywords do Ensino de Física Nacional"},
+    {poster: "P71", titulo: "Modelagem Computacional da Previsão de Quebra de Gotas de Óleo em um Hidrociclone"},
+    {poster: "P72", titulo: "Otimização dos Gastos de Aquisição de Matérias-Primas para Construção Civil"},
+    {poster: "P73", titulo: "Proposta de Método para o Problema de Escalonamento de Projetos com Restrição de Recursos"},
+    {poster: "P74", titulo: "Visualização de Dados em Java para um Modelo de Autômato Celularde Crescimento de Tumores"}
+];
+
+
+  //titulo sessão posteres 
+  titluloPS1 = [
+    {titulo: "Processamento de Imagens", variavel: this.pImagens}, 
+    {titulo: "Otimização e Pesquisa Operacional", variavel: this.pOtimizacao},
+    {titulo: "Modelagem, Simulação e Controle de Processos", variavel: this.pMSCP},
+    {titulo: "Métodos Computacionais", variavel: this.pMComputacionais1},
+  ];
+
+  titluloPS2 = [
+    {titulo: "Métodos Computacionais",variavel: this.pMComputacionais2},
+    {titulo: "Materiais Metálicos e Compósitos", variavel: this.pMMC},
+    {titulo: "Matemática Aplicada", variavel: this.pMatematicaAplicada}
+  ];
+
+  sessaop1 = [{nome: "Sessão  1", horario: "11h15 às 12h:15"}];
+  sessaop2 = [{nome: "Sessão  2", horario: "15:30 às 16h:00"}];
+
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {    
-
-    this.sessionList  = navParams.get('lista');
-    this.dia = navParams.get('dia');
+    this.dia = navParams.get('dia');   
   }
 
-  expandItemOral(items, item){
-    items.map((listItem) => {
-      if(item == listItem){
-        listItem.expanded = !listItem.expanded;
-        this.lista = item.variavel;
-      } else {
-        listItem.expanded = false;
-      }
-      return listItem;
-    });
+  apresentarOral( titulo ){
+    this.navCtrl.push(ApresentacaoOralPage, {nome: titulo.nome, sessao: titulo.variavel});
   }
+
+  apresentarPoster( titulo ){
+    this.navCtrl.push(ApresentacaoPosterPage, {nome: titulo.titulo, poster: titulo.variavel});
+  }
+
 }
