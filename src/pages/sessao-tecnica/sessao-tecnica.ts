@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApresentacaoOralPage } from '../apresentacao-oral/apresentacao-oral';
 import { ApresentacaoPosterPage } from '../apresentacao-poster/apresentacao-poster';
 @IonicPage()

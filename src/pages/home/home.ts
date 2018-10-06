@@ -147,7 +147,8 @@ export class HomePage {
       this.mostrarToast("minicurso");       
     }
     else if (this.data == "dia10") {
-      this.navCtrl.push(PalestrasMinicursosPage, {lista: this.retornoTipo(this.dia10, 'minicurso'), dia: "10/10"});
+      this.mostrarToast("minicurso");   
+     //this.navCtrl.push(PalestrasMinicursosPage, {lista: this.retornoTipo(this.dia10, 'minicurso'), dia: "10/10"});
     }
   }
 
