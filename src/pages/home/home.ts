@@ -80,20 +80,7 @@ export class HomePage {
   constructor(private screenOrientation: ScreenOrientation, public navCtrl: NavController, public toastCtrl: ToastController) {       
     this.data = "dia8";
     this.lista = this.dia8;
-    //this.lockScreenOrientatio();
-  }
- 
-  lockScreenOrientatio(){
-    try{
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
-    }
-    catch( error ){
-      console.error(error);
-    }    
-  }
-
-  unlockScreenOrientation(){
-    this.screenOrientation.unlock();
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
   }
 
   mostrarToast(texto) {
@@ -152,7 +139,6 @@ export class HomePage {
     }
   }
 
-  //falta implemetar
   sessoesTecnicas(event) {        
     if (this.data == "dia8") {
       this.mostrarToast("sessões");      

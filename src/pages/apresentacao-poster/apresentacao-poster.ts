@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 /**
  * Generated class for the ApresentacaoPosterPage page.
@@ -17,9 +18,10 @@ export class ApresentacaoPosterPage {
 
   lista: any;
   nomeTitulo: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private screenOrientation: ScreenOrientation, public navCtrl: NavController, public navParams: NavParams) {
     this.lista = navParams.get('poster');
     this.nomeTitulo = navParams.get('nome');
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
   }
 
   ionViewDidLoad() {

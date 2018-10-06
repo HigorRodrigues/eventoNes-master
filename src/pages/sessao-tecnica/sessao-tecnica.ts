@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApresentacaoOralPage } from '../apresentacao-oral/apresentacao-oral';
 import { ApresentacaoPosterPage } from '../apresentacao-poster/apresentacao-poster';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 @IonicPage()
 @Component({
   selector: 'page-sessao-tecnica',
@@ -329,8 +330,9 @@ export class SessaoTecnicaPage {
   sessaop2 = [{nome: "Sessão  2", horario: "15:30 às 16h:00"}];
 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {    
-    this.dia = navParams.get('dia');   
+  constructor(private screenOrientation: ScreenOrientation, public navCtrl: NavController, public navParams: NavParams) {    
+    this.dia = navParams.get('dia'); 
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);  
   }
 
   apresentarOral( titulo ){
