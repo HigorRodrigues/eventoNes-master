@@ -57,17 +57,19 @@ export class HomePage {
       {tipo: 'geral', titulo: 'Almoço', horaInicio: '12:30', horaFim: '14:00'},
       {tipo: 'plESes', titulo: 'Sessão Técnica e Palestra de Sessão', horaInicio: '14:00', horaFim: '15:30'},
       {tipo: 'geral', titulo: 'Coffee Break - Lançamento de Livros - Sessão Pôsteres', horaInicio: '15:30', horaFim: '16:00'},
-      {tipo: 'plESes', titulo: 'Palestra em Ciência e Tecnologia dos Materiais', horaInicio: '16:00', horaFim: '17:00'},
-      {tipo: 'plESes', titulo: 'Sessão Técnica - Reunião dos Coordenadores de PPG', horaInicio: '17:00', horaFim: '18:00'},
+      {tipo: 'plESes', titulo: 'Palestra em Ciência e Tecnologia dos Materiais: “Modelagem Numérica de Falha de Materiais: O Caso da Propagação Estável de Trincas”', instrutor: 'Eduardo Atem de Carvalho – Professor da UENF', horaInicio: '16:00', horaFim: '17:00'},
+      {tipo: 'plESes', titulo: 'Palestra em Sessão Técnica: “Espectroscopia Fotoacústica: Breve Introdução e Algumas Aplicações”', instrutor: "Noberto Cella – Professor do IPRJ/UERJ", horaInicio: '17:00', horaFim: '18:00'},
+      {tipo: 'plESes', titulo: 'Reunião dos Coordenadores de PPG', horaInicio: '17:00', horaFim: '18:00'},
       {tipo: 'geral', titulo: '*Jantar por Adesão', horaInicio: '18:30', horaFim: '20:00'}
     ];
 
     dia10 = [
-      {tipo: 'plESes', titulo: 'Palestra em Sessão Técnica: Modelagem (Agro)ambiental: Avanços e Urgências nos Estudos sobre Agrotóxicos', instrutor: 'Mônica Santana Vianna - Pós-Doutoranda do IPRJ/UERJ e João Paulo Torres – Professor da UFRJ', horaInicio: '08:00', horaFim: '10:00'},
+      {tipo: 'plESes', titulo: 'Sessão Técnica', horaInicio: '08:00', horaFim: '10:00'},
       {tipo: 'plESes', titulo: 'Palestra 3: O Algoritmo de Colisão de Partículas (PCA)', instrutor: 'Wagner Figueiredo Sacco – Professor da UFOPA', horaInicio: '10:00', horaFim: '11:00'},
       {tipo: 'plESes', titulo: 'Sessões técnica e Sessão Pôsteres', horaInicio: '11:00', horaFim: '12:30'},
       {tipo: 'geral', titulo: 'Almoço', horaInicio: '12:30', horaFim: '14:00'},
       {tipo: 'plESes', titulo: 'Sessão Técnica e Palestra de Sessão', horaInicio: '14:00', horaFim: '15:30'},
+      {tipo: 'plESes', titulo: 'Palestra em Sessão Técnica: Modelagem (Agro)ambiental: Avanços e Urgências nos Estudos sobre Agrotóxicos', instrutor: 'Mônica Santana Vianna - Pós-Doutoranda do IPRJ/UERJ e João Paulo Torres – Professor da UFRJ', horaInicio: '15:00', horaFim: '17:00'},
       {tipo: 'geral', titulo: 'Coffee Break - Sessão Pôsteres', horaInicio: '15:30', horaFim: '16:00'},
       {tipo: 'plESes', titulo: 'Palestra 4: Problemas Inversos em Dinâmica e Vibrações: Modelagem e Estimação de Parâmetros', instrutor: 'Leonardo Tavares Stutz – Professor do IPRJ/UERJ', horaInicio: '16:00', horaFim: '17:00'},
       {tipo: 'plESes', titulo: 'Palestra 5: Análise Multicritério', instrutor: 'Helder Gomes Costa – Professor da UFF', horaInicio: '17:00', horaFim: '18:00'},

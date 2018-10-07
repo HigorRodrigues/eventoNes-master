@@ -280,8 +280,8 @@ titluloPS2 = [
   {titulo: "Computação de Alto Desempenho", expanded: false, variavel: this.pCAD} 
 ];
 
-  sessaop1 = [{nome: "Sessao 1", horario:"11h15 às 12h:15"}];
-  sessaop2 = [{nome: "Sessao 2", horario:"15:30 às 16h:00"}];
+  sessaop1 = [{nome: "Sessão 1", horario:"11h15 às 12h:15"}];
+  sessaop2 = [{nome: "Sessão 2", horario:"15:30 às 16h:00"}];
 
   dia: any;
   tipoSessao: string = "orais";
