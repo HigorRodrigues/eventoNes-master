@@ -290,13 +290,14 @@ titluloPS2 = [
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);  
   }
 
-  apresentarOral( titulo ){
-    this.navCtrl.push(ApresentacaoOralPage, {nome: titulo.nome, sessao: titulo.variavel});
+  apresentarOral( titulo, sessaoSelecionada ){
+    this.navCtrl.push(ApresentacaoOralPage, {nome: titulo.nome, sessao: titulo.variavel, dia: this.dia, sessaoSelecionada: sessaoSelecionada});
   }
 
-  apresentarPoster( titulo ){
-    this.navCtrl.push(ApresentacaoPosterPage, {nome: titulo.titulo, poster: titulo.variavel});
+  apresentarPoster( titulo, sessaoSelecionada, posterSelecionado ){
+    this.navCtrl.push(ApresentacaoPosterPage, {nome: titulo.titulo, poster: titulo.variavel, dia: this.dia, posterSelecionado: posterSelecionado});
   }
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad SessaoTecnica2Page');
   }

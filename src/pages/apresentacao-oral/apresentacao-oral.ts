@@ -11,9 +11,14 @@ export class ApresentacaoOralPage {
 
   lista: any;
   nomeTitulo: string;
+  dia: string;
+  sessaoSelecionada: string;
+
   constructor(private screenOrientation: ScreenOrientation, public navCtrl: NavController, public navParams: NavParams) {
     this.lista = navParams.get('sessao');
     this.nomeTitulo = navParams.get('nome');
+    this.dia = navParams.get('dia');
+    this.sessaoSelecionada = navParams.get('sessaoSelecionada');
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
   }
 

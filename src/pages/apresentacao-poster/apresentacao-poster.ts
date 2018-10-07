@@ -18,9 +18,14 @@ export class ApresentacaoPosterPage {
 
   lista: any;
   nomeTitulo: string;
+  dia: string;
+  posterSelecionado: string;
+
   constructor(private screenOrientation: ScreenOrientation, public navCtrl: NavController, public navParams: NavParams) {
     this.lista = navParams.get('poster');
     this.nomeTitulo = navParams.get('nome');
+    this.dia = navParams.get('dia');
+    this.posterSelecionado = navParams.get('posterSelecionado');
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
   }
 
