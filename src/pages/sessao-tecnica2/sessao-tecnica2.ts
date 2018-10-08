@@ -287,7 +287,6 @@ titluloPS2 = [
   tipoSessao: string = "orais";
   constructor(private screenOrientation: ScreenOrientation, public navCtrl: NavController, public navParams: NavParams) {
     this.dia = navParams.get('dia');
-
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);  
   }
 
@@ -295,7 +294,7 @@ titluloPS2 = [
     this.navCtrl.push(ApresentacaoOralPage, {nome: titulo.nome, sessao: titulo.variavel, dia: this.dia, sessaoSelecionada: sessaoSelecionada});
   }
 
-  apresentarPoster( titulo, posterSelecionado ){
+  apresentarPoster( titulo, sessaoSelecionada, posterSelecionado ){
     this.navCtrl.push(ApresentacaoPosterPage, {nome: titulo.titulo, poster: titulo.variavel, dia: this.dia, posterSelecionado: posterSelecionado});
   }
   
