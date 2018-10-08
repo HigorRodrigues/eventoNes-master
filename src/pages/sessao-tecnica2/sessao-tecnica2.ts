@@ -294,7 +294,7 @@ titluloPS2 = [
     this.navCtrl.push(ApresentacaoOralPage, {nome: titulo.nome, sessao: titulo.variavel, dia: this.dia, sessaoSelecionada: sessaoSelecionada});
   }
 
-  apresentarPoster( titulo, sessaoSelecionada, posterSelecionado ){
+  apresentarPoster( titulo, posterSelecionado ){
     this.navCtrl.push(ApresentacaoPosterPage, {nome: titulo.titulo, poster: titulo.variavel, dia: this.dia, posterSelecionado: posterSelecionado});
   }
   

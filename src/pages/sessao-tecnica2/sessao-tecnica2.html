@@ -25,7 +25,7 @@
           </ion-card-header>
   
           <ion-list>
-            <button (click)="apresentarOral(titulo)" ion-item *ngFor="let titulo of tituloOral1">
+            <button (click)="apresentarOral(titulo, sessao1[0].nome)" ion-item *ngFor="let titulo of tituloOral1">
                 {{titulo.nome}}
             </button>
           </ion-list>
@@ -37,7 +37,7 @@
           </ion-card-header>
   
           <ion-list>
-            <button (click)="apresentarOral(titulo)" ion-item *ngFor="let titulo of tituloOral2">
+            <button (click)="apresentarOral(titulo, sessao2[0].nome)" ion-item *ngFor="let titulo of tituloOral2">
                 {{titulo.nome}}
             </button>
           </ion-list>
@@ -49,7 +49,7 @@
           </ion-card-header>
   
           <ion-list>
-            <button (click)="apresentarOral(titulo)" ion-item *ngFor="let titulo of tituloOral3">
+            <button (click)="apresentarOral(titulo, sessao3[0].nome)" ion-item *ngFor="let titulo of tituloOral3">
                 {{titulo.nome}}
             </button>
           </ion-list>
@@ -66,7 +66,7 @@
           </ion-card-header>
     
           <ion-list>
-            <button (click)="apresentarPoster(titulo)" ion-item *ngFor="let titulo of titluloPS1">
+            <button (click)="apresentarPoster(titulo, sessaop1[0].nome)" ion-item *ngFor="let titulo of titluloPS1">
               {{titulo.titulo}}
             </button>
           </ion-list>
@@ -78,7 +78,7 @@
           </ion-card-header>
   
           <ion-list>
-            <button (click)="apresentarPoster(titulo)" ion-item *ngFor="let titulo of titluloPS2">
+            <button (click)="apresentarPoster(titulo, sessaop2[0].nome)" ion-item *ngFor="let titulo of titluloPS2">
                 {{titulo.titulo}}
             </button>
           </ion-list>
